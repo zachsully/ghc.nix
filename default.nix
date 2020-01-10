@@ -38,11 +38,12 @@ let
         gmp.dev gmp.out glibcLocales
         ncurses.dev ncurses.out
         perl git file which python3
-        (hspkgs.ghcWithPackages (ps: [ ps.alex ps.happy ]))
+        (hspkgs.ghcWithPackages (ps: [ ps.alex ps.happy ps.html ps.regex-compat ]))
         xlibs.lndir  # for source distribution generation
         cabal-install
         zlib.out
         zlib.dev
+        valgrind
       ]
       ++ docsPackages
       ++ stdenv.lib.optional withLlvm llvm_6
